@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Timer</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+<h1>Pomodoro Timer</h1>
+<div id='timer-container'>
+    <button id="start" onclick='startTimer()' class='timer-component'>
+        <i class="fa fa-play" style="font-size:25px;"></i>
+    </button>
+    <button id="stop" onclick='stopTimer()' class='timer-component' style="display:none">
+        <i class="fa fa-pause" style="font-size:25px;"></i>
+    </button>
+    <button id="reset" onclick='resetTimer()' class='timer-component'>
+        <i class="fa fa-times" style="font-size:30px;"></i> </button>
+    </br>
+    <span id="timer" class='timer-component'>-- : --</span>
+    <div class="work-button-container">
+        <div class="button-flipper">
+            <div class="front-button"><span id='work-label'>Work</span>
+            </div>
+            <div class="back-button">
+                <button id="decreasework">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <span id="work-time">1</span>
+                <button id="increasework">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <p id="message"></p>
+    <div class='break-button-container'>
+        <div class="button-flipper">
+            <div class="front-button"><span id='break-label'>Break</span>
+            </div>
+            <div class="back-button">
+                <button id="decreasebreak">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <span id='break'>1</span>
+                <button id="increasebreak">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p class=made-by><i class="fa fa-copyright" aria-hidden="true"></i> made by <a href="https://codepen.io/o1ena/full/gmXWrN/" target="_blank">o1ena</a>
+    </p>
+</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+body {
+    background-color: #333333;
+    font-family: Orbitron;
+    color: rgba(255, 255, 255, 0.87);
+}
+h1 {
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+#timer-container {
+    position: relative;
+    width: 24em;
+    height: 24em;
+    padding: 2.8em;
+    background: #4c8c4a;
+    border-radius: 50%;
+    margin: 5em auto 0;
+    border: 10px solid #4c8c4a;
+    box-shadow: 0 0 0 8px #333333 inset;
+    box-sizing: border-box;
+}
+.timer-component {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    margin: -2em;
+    opacity: 1;
+}
+.break-button-container {
+    -webkit-transform: translate(12em);
+    -moz-transform: translate(12em);
+    -ms-transform: translate(12em);
+    -o-transform: translate(12em);
+    transform: translate(12em);
+    margin-left: 7.3em;
+    margin-top: -1.3em;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+}
+.work-button-container {
+    -webkit-transform: translate(-12em);
+    -moz-transform: translate(-12em);
+    -ms-transform: translate(-12em);
+    -o-transform: translate(-12em);
+    transform: translate(-12em);
+    margin-left: -7em;
+    margin-top: 7em;
+    padding: 10px;
+    text-align: center;
+}
+.work-button-container,
+.break-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    .button-flipper {
+        transition: .8s cubic-bezier(.775, .07, .575, .995);
+        transform-style: preserve-3d;
+        position: absolute;
+        &:hover {
+            transform: rotateX(180deg);
+        }
+    }
+    .front-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        padding: 10px;
+        background: #c9bc1f;
+        cursor: default;
+        border: none;
+        color: #fff;
+        backface-visibility: hidden;
+        z-index: 2;
+        transform: rotateX(0deg);
+        position: absolute;
+    }
+    .back-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        padding: 10px;
+        background: #c9bc1f;
+        border: none;
+        color: #fff;
+        backface-visibility: hidden;
+        transform: rotateX(-180deg);
+    }
+}
+#start,
+#stop {
+    transform: rotate(320deg) translate(9em) rotate(400deg);
+    -webkit-transform: rotate(320deg) translate(9em) rotate(400deg);
+    -moz-transform: rotate(320deg) translate(9em) rotate(400deg);
+    -o-transform: rotate(320deg) translate(9em) rotate(400deg);
+    margin: -9em;
+    margin-top: -13.9em;
+}
+#reset {
+    transform: rotate(320deg) translate(9em) rotate(400deg);
+    -webkit-transform: rotate(320deg) translate(9em) rotate(400deg);
+    -moz-transform: rotate(320deg) translate(9em) rotate(400deg);
+    -o-transform: rotate(320deg) translate(9em) rotate(400deg);
+    margin: -9em;
+    margin-top: 21.5em;
+}
+#timer {
+    font-size: 40px;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 60%;
+    left: 46%;
+    padding: 0px;
+    text-align: center;
+}
+button {
+    border: transparent;
+    background: transparent;
+    outline: none;
+    color: #03a9f4;
+}
+#reset,
+#start,
+#stop {
+    border: 3px solid #03a9f4;
+    border-radius: 50%;
+}
+#work-label,
+#break-label,
+#work-time,
+#break {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#message {
+    position: absolute;
+    bottom: 80px;
+    left: 150px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+#reset i,
+#start i,
+#stop i {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#reset i:hover,
+#start i:hover,
+#stop i:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+#message {
+    animation: blinker 2s linear infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.made-by {
+    padding-top: 150px;
+    text-align: center;
+}
+.made-by:hover {
+    cursor: default;
+}
+.made-by a {
+    color: #4c8c4a;
+    text-decoration: none;
+}
+.made-by a:hover {
+    color: #3d6e3b;
+}
